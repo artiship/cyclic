@@ -80,11 +80,11 @@ public class TaskDependencyTest {
         TaskSuccessRecord checkPoint = of(childCron,
                 nextScheduleTimeOf(parentCron, checkPointBase("2019-11-10 03:01:03", childCron)));
 
-        assertThat(history.higher(checkPoint)).isNull();
+        assertThat(history.ceiling(checkPoint)).isNull();
 
         history.add(p2);
 
-        assertThat(history.higher(checkPoint)).isEqualTo(p2);
+        assertThat(history.ceiling(checkPoint)).isEqualTo(p2);
     }
 
     @Test
@@ -100,12 +100,12 @@ public class TaskDependencyTest {
         TaskSuccessRecord check_point_1 = of(childCron,
                 nextScheduleTimeOf(parentCron, checkPointBase("2019-11-09 13:01:03", parentCron)));
 
-        assertThat(history.higher(check_point_1)).isEqualTo(p1);
+        assertThat(history.ceiling(check_point_1)).isEqualTo(p1);
 
         TaskSuccessRecord check_point_2 = of(childCron,
                 nextScheduleTimeOf(parentCron, checkPointBase("2019-11-09 14:01:03", parentCron)));
 
-        assertThat(history.higher(check_point_2)).isEqualTo(p1);
+        assertThat(history.ceiling(check_point_2)).isEqualTo(p1);
     }
 
     private LocalDateTime checkPointBase(String scheduleTimeStr, String theGreaterCycleCron) {
