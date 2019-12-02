@@ -52,9 +52,9 @@ public class TaskDependencyTest {
         TaskSuccessRecord p1 = of(parentCron, parse("2019-11-09 22:01:04"));
         TaskSuccessRecord p2 = of(parentCron, parse("2019-11-09 23:01:04"));
         TaskSuccessRecord p3 = of(parentCron, parse("2019-11-10 00:01:04"));
-        TaskSuccessRecord p3 = of(parentCron, parse("2019-11-10 01:01:04"));
-        TaskSuccessRecord p4 = of(parentCron, parse("2019-11-10 02:01:04"));
-        TaskSuccessRecord p5 = of(parentCron, parse("2019-11-10 03:01:04"));
+        TaskSuccessRecord p4 = of(parentCron, parse("2019-11-10 01:01:04"));
+        TaskSuccessRecord p5 = of(parentCron, parse("2019-11-10 02:01:04"));
+        TaskSuccessRecord p6 = of(parentCron, parse("2019-11-10 03:01:04"));
 
         history.add(p1);
         history.add(p2);
